@@ -723,7 +723,7 @@ import LogoIcon from './components/icons/LogoIcon.vue'
             <div class="border-b border-paragraph dark:border-white dark:border-opacity-20 border-opacity-20 pb-5">
               <h3 class="text-2xl uppercase tracking-widest font-light md:text-xl">Skills</h3>
             </div>
-            <div class="grid grid-cols-4 gap-7 md:grid-cols-4 md:gap-5 sm-grid-cols-1">
+            <div class="grid grid-cols-4 gap-7 md:grid-cols-2 md:gap-5 sm-grid-cols-1">
                 <div v-for="(skill, index) in skills" :key="index" class="relative border border-paragraph dark:border-white dark:border-opacity-20 border-opacity-20 rounded-xl px-7 pt-7 md:px-5 md:pt-5">
                   <div class="flex items-center gap-5 mb-7 md:mb-5">
                       <div class="w-10 h-10">
@@ -748,7 +748,7 @@ import LogoIcon from './components/icons/LogoIcon.vue'
             <h3 class="text-2xl uppercase tracking-widest font-light md:text-xl">Services</h3>
           </div>
           <div class="grid gap-8 md:gap-6">
-            <div class="grid grid-cols-2 gap-7 md:grid-cols-3 md:gap-5 sm-grid-cols-1">
+            <div class="grid grid-cols-2 gap-7 md:grid-cols-2 md:gap-5 sm-grid-cols-1">
               <div v-for="(service, index) in services" :key="index" class="relative border border-paragraph dark:border-white dark:border-opacity-30 border-opacity-30 rounded-xl p-7 md:p-5 transition-all duration-300 hover:bg-dark-100 hover:text-white dark:hover:bg-white dark:hover:text-black hover:border-opacity-100 group scale-100 ease-in-out">
                 <div class="flex flex-col gap-3 mb-2">
                   <h3 class="text-6xl md:text-5xl">{{ service.letter }}</h3>
@@ -763,30 +763,30 @@ import LogoIcon from './components/icons/LogoIcon.vue'
         </div>
       </div>
         <div id="portfolio" class="p-10 bg-black container">
-        <div class="px-2">
-          <div class="mb-8 md:mb-6">
-            <div class="border-b border-paragraph dark:border-white dark:border-opacity-20 border-opacity-20 pb-5">
-              <h3 class="text-2xl uppercase tracking-widest md:text-xl">Portfolio</h3>
+          <div class="px-2">
+            <div class="mb-8 md:mb-6">
+              <div class="border-b border-paragraph dark:border-white dark:border-opacity-20 border-opacity-20 pb-5">
+                <h3 class="text-2xl uppercase tracking-widest md:text-xl">Portfolio</h3>
+              </div>
             </div>
-          </div>
-          <div class="grid overflow-hidden grid-cols-2 gap-x-7 gap-y-10 sm-grid-cols-1 md:grid-cols-3 md:gap-y-8 md:gap-x-6">
-            <div v-for="(project, key) in projects" :key="key" class="relative group">
-              <div class="h-project overflow-hidden rounded-xl bg-dark-100 border border-paragraph border-opacity-0 bg-opacity-10 dark:border-none dark:bg-white relative md:h-80">
-                <img :src="`/projects/${project.image}`" loading="lazy" :alt="project.name" class="w-full h-full object-cover rounded-xl object-top">
-              </div>
-              <div class="mt-7 px-2">
-                <ul class="flex items-center flex-wrap gap-x-2 gap-y-2.5 mb-4">
-                  <li v-for="(skill, index) in project.skills" class="dark:text-black dark:bg-white text-white bg-dark-100 bg-opacity-90 dark:bg-opacity-100 py-1 px-3 rounded-lg text-xs tracking-wide" :key="index">{{ skill }}</li>
-                </ul>
-                <div class="flex items-center justify-between">
-                  <h4 class="leading-none text-lg text-black dark:text-white font-medium tracking-wider transition-colors group-hover:text-primary">{{ project.name }} </h4>
+            <div class="grid overflow-hidden grid-cols-2 gap-x-7 gap-y-10 sm-grid-cols-1 md:grid-cols-2 md:gap-y-8 md:gap-x-6">
+              <div v-for="(project, key) in projects" :key="key" class="relative group">
+                <div class="h-project overflow-hidden rounded-xl bg-dark-100 border border-paragraph border-opacity-0 bg-opacity-10 dark:border-none dark:bg-white relative md:h-80">
+                  <img :src="`/projects/${project.image}`" loading="lazy" :alt="project.name" class="w-full h-full object-cover rounded-xl object-top">
                 </div>
+                <div class="mt-7 px-2">
+                  <ul class="flex items-center flex-wrap gap-x-2 gap-y-2.5 mb-4">
+                    <li v-for="(skill, index) in project.skills" class="dark:text-black dark:bg-white text-white bg-dark-100 bg-opacity-90 dark:bg-opacity-100 py-1 px-3 rounded-lg text-xs tracking-wide" :key="index">{{ skill }}</li>
+                  </ul>
+                  <div class="flex items-center justify-between">
+                    <h4 class="leading-none text-lg text-black dark:text-white font-medium tracking-wider transition-colors group-hover:text-primary">{{ project.name }} </h4>
+                  </div>
+                </div>
+                <a :href="project.link" target="_blank" :aria-label="project.name" class="absolute inset-0 z-10"></a>
               </div>
-              <a :href="project.link" target="_blank" :aria-label="project.name" class="absolute inset-0 z-10"></a>
             </div>
           </div>
         </div>
-      </div>
       <div id="testimonials" class="p-10 bg-black container">
         <div class="px-2">
           <div class="mb-8 md:mb-6">
@@ -806,7 +806,7 @@ import LogoIcon from './components/icons/LogoIcon.vue'
                   }"
                   :breakpoints= "{
                     768: {
-                      slidesPerView: 2,
+                      slidesPerView: 1,
                       spaceBetween: 28,
                     }
                   }"
