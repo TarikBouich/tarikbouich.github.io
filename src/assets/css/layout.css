@@ -75,6 +75,26 @@
     }
   }
 
+  .header__body-burger--active .header__body-burger-icon {
+    transform: rotate(45deg)
+  }
+
+  .header__body-burger-icon .line {
+      fill: none;
+      transition: stroke-dasharray 0.5s,stroke-dashoffset 0.5s;
+      stroke: #fff;
+      stroke-width: 5.5;
+      stroke-linecap: round
+  }
+
+  .header__body-burger-icon .bottom,.header__body-burger-icon .top {
+      stroke-dasharray: 40 121
+  }
+
+  .header__body-burger--active .header__body-burger-icon .bottom,.header__body-burger--active .header__body-burger-icon .top {
+      stroke-dashoffset: -68px
+  }
+
   @media(max-width: 992px) {
     .blur-image {
       width: 100%;

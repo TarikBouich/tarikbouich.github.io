@@ -365,9 +365,10 @@ import LogoIcon from './components/icons/LogoIcon.vue'
             </a>
             <div
               @click="isMenuCollapsed = !isMenuCollapsed"
-              class="dark:text-white text-black hidden md:block"
+              class="dark:text-white text-black hidden md:block header__body-burger"
+              :class="{'header__body-burger--active': isMenuCollapsed}"
             >
-              <MenuIcon class="w-5 h-5" />
+              <MenuIcon :class="{'header__body-burger-icon': isMenuCollapsed, 'w-10 h-10': true}" />
             </div>
           </div>
           <ul class="flex items-center justify-center gap-10 flex-1 md:hidden lgx:gap-5">
