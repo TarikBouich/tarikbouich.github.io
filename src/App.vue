@@ -205,6 +205,15 @@ import LogoIcon from './components/icons/LogoIcon.vue'
             title: 'CEO & Founder, YouCan Inc.',
             image: 'elghissani-mohamed.webp'
           },
+          quote: "I had the pleasure of working with Tarik as a Front-End Developer, and I can confidently say he is an exceptional asset to any development team. Throughout his time with us, Tarik consistently demonstrated a deep understanding of modern web technologies, particularly Vue.js, Tailwind CSS, and responsive design principles.What sets Tarik apart is not only his technical skills but also his dedication to delivering high-quality work on time. He approaches each project with creativity, problem-solving ability, and attention to detail, ensuring that the final product is polished and user-friendly. His collaborative nature made him a great team player, always open to feedback and eager to contribute new ideas.Tarik's passion for learning and staying updated with the latest trends in front-end development makes him stand out as a developer. I highly recommend him for any role that requires a skilled, motivated, and innovative Front-End Developer.",
+          reviews: 5
+        },
+        {
+          author: {
+            name: 'Zouhir Bahij',
+            title: 'CEO & Founder, YouCan Inc.',
+            image: 'zouhir-bahij.webp'
+          },
           quote: "Crafting captivating user experiences through code is not just a job for Tarik, it's a passion. With an expert command over front-end technologies, Tarik brings life to designs and transforms ideas into interactive digital realities. Creating seamless journeys for users. As a Front-End Engineer, Tarik illuminates the path where creativity and technology converge.",
           reviews: 5
         },
@@ -652,20 +661,20 @@ import LogoIcon from './components/icons/LogoIcon.vue'
         </div>
         <div class="flex-1 md">
           <div class="grid gap-16 md:gap-8 mb-10 md:px-6">
-            <h1 class="text-6xl leading-normal md:text-4xl md:leading-normal md:text-center">
+            <h1 class="text-6xl leading-normal md:text-3xl md:leading-normal md:text-center sm:text-2xl">
               Hello, I’m 
-              <span class="text-primary">Tarik Bouich</span>.<br>
-              Senior <span class="bord">Front-End Developer<i></i></span><br> Based in Morocco.
+              <span class="text-primary">Tarik Bouich</span>.<br class="sm:hidden">
+              Senior <span class="bord">Front-End Developer<i></i></span><br class="sm:hidden"> Based in Morocco.
             </h1>
             <div class="flex items-center gap-20 md:grid md:grid-cols-2 md:gap-6">
-              <div class="flex items-center gap-5 md:gap-3">
+              <div class="flex items-center gap-5 md:gap-3 sm:flex-col">
                 <h2 class="text-7xl md:text-5xl">7</h2>
-                <p class="text-base font-extralight text-paragraph">Years <br> of Experance
+                <p class="text-base font-extralight text-paragraph sm:text-center">Years <br> of Experance
                 </p>
               </div>
-              <div class="flex items-center gap-5 md:gap-3">
+              <div class="flex items-center gap-5 md:gap-3 sm:flex-col">
                 <h2 class="text-7xl md:text-5xl">+40</h2>
-                <p class="text-base font-extralight text-paragraph">
+                <p class="text-base font-extralight text-paragraph sm:text-center">
                   Projects Completed
                 </p>
               </div>
@@ -753,7 +762,7 @@ import LogoIcon from './components/icons/LogoIcon.vue'
           </div> 
         </div>
       </div>
-        <div id="portfolio" class="p-10 bg-black container">
+      <div id="portfolio" class="p-10 bg-black container">
         <div class="px-2">
           <div class="mb-8 md:mb-6">
             <div class="border-b border-paragraph dark:border-white dark:border-opacity-20 border-opacity-20 pb-5">
@@ -787,262 +796,49 @@ import LogoIcon from './components/icons/LogoIcon.vue'
           </div>
             <div>
               <swiper-container
-                :slides-per-view="1"
-                :space-between="24"
-                :loop="true"
-                :lazy="true"
-                :autoplay="{
-                  delay: 6000,
-                  disableOnInteraction: false
-                }"
-                :breakpoints= "{
-                  768: {
-                    slidesPerView: 2,
-                    spaceBetween: 28,
-                  }
-                }"
-              >
-              <swiper-slide>
-                <div class="relative border border-paragraph dark:border-white dark:border-opacity-20 border-opacity-20 rounded-xl p-7 estimonials-shadow overflow-hidden md:p-5">
-                  <div class="flex items-center gap-7 md:gap-5">
-                    <div class="w-24 h-24 bg-primary rounded-lg overflow-hidden relative">
-                      <img src="./assets/testimonials/anas-ezzouine.webp" loading="lazy" alt="Anass Ezzouine" class="w-full h-full object-cover object-center absolute">
-                    </div>
-                    <div class="flex-1">
-                      <h4 class="text-primary text-2xl md:text-xl mb-2.5 leading-none">Anass Ezzouine</h4>
-                      <span class="text-base text-paragraph dark:text-dark-75">CEO &amp; Founder, Tekency.</span>
-                    </div>
-                  </div>
-                  <div class="mt-7 mb-4 md:mt-5 md:mb-3">
-                    <p class="text-lg text-paragraph dark:text-dark-75 font-extralight md:text-base">Tarik is a person who possesses all the skills needed to manage a team and be productive during intense crunch periods. Furthermore, he has a unique ability to keep the team organized and on schedule. Besides, Tarik also supported and helped us to reach our full potential, and he never hesitated to lend a helping hand.</p>
-                  </div>
-                  <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-2.5">
-                      <div class="flex items-center gap-0.5">
-                        <span class="text-primary w-4 h-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-full h-full">
-                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
-                          </svg>
-                        </span>
-                        <span class="text-primary w-4 h-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-full h-full">
-                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
-                          </svg>
-                        </span>
-                        <span class="text-primary w-4 h-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-full h-full">
-                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
-                          </svg>
-                        </span>
-                        <span class="text-primary w-4 h-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-full h-full">
-                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
-                          </svg>
-                        </span>
-                        <span class="text-primary w-4 h-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-full h-full">
-                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
-                          </svg>
-                        </span>
+                  :slides-per-view="1"
+                  :space-between="24"
+                  :loop="true"
+                  :lazy="true"
+                  :autoplay="{
+                    delay: 6000,
+                    disableOnInteraction: false
+                  }"
+                  :breakpoints= "{
+                    768: {
+                      slidesPerView: 2,
+                      spaceBetween: 28,
+                    }
+                  }"
+                >
+                <swiper-slide v-for="(testimonial, index) in testimonials" :key="index">
+                  <div class="relative border border-paragraph dark:border-white dark:border-opacity-20 border-opacity-20 rounded-xl p-7 estimonials-shadow overflow-hidden md:p-5">
+                    <div class="flex items-center gap-7 md:gap-5">
+                      <div class="w-24 h-24 bg-primary rounded-lg overflow-hidden relative">
+                        <img :src="`/testimonials/${testimonial.author.image}`" loading="lazy" :alt="testimonial.author.name" class="w-full h-full object-cover object-center absolute">
                       </div>
-                      <span class="text-xs text-paragraph dark:text-dark-75 leading-none pt-1">5 reviews</span>
-                    </div>
-                  </div>
-                </div>
-              </swiper-slide>
-              <swiper-slide>
-                <div class="relative border border-paragraph dark:border-white dark:border-opacity-20 border-opacity-20 rounded-xl p-7 estimonials-shadow overflow-hidden md:p-5">
-                  <div class="flex items-center gap-7 md:gap-5">
-                    <div class="w-24 h-24 bg-primary rounded-lg overflow-hidden relative">
-                      <img src="./assets/testimonials/mohamed-el-ghourfi.webp" loading="lazy" alt="Anass Ezzouine" class="w-full h-full object-cover object-center absolute">
-                    </div>
-                    <div class="flex-1">
-                      <h4 class="text-primary text-2xl md:text-xl mb-2.5 leading-none">Mohamed El-Ghorfi</h4>
-                      <span class="text-base text-paragraph dark:text-dark-75">CEO &amp; Founder, Tekency.</span>
-                    </div>
-                  </div>
-                  <div class="mt-7 mb-4 md:mt-5 md:mb-3">
-                    <p class="text-lg text-paragraph dark:text-dark-75 font-extralight md:text-base">Tarik is an essential asset to any development team. During my collaboration with him, I consistently marveled at his strong work ethic and unwavering determination to complete any assigned task. Whether it was debugging functions in templates, constructing intricate sales systems for rapidly expanding clients, or providing comprehensive guidance to newer team members finding their way in the industry. 
-                      Tarik has repeatedly demonstrated his readiness to take on challenges. I am genuinely honored to have had the opportunity to work alongside Tarik, and without reservation, I affirm that he deserves every chance to progress and thrive in the field.</p>
-                  </div>
-                  <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-2.5">
-                      <div class="flex items-center gap-0.5">
-                        <span class="text-primary w-4 h-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-full h-full">
-                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
-                          </svg>
-                        </span>
-                        <span class="text-primary w-4 h-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-full h-full">
-                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
-                          </svg>
-                        </span>
-                        <span class="text-primary w-4 h-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-full h-full">
-                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
-                          </svg>
-                        </span>
-                        <span class="text-primary w-4 h-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-full h-full">
-                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
-                          </svg>
-                        </span>
-                        <span class="text-primary w-4 h-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-full h-full">
-                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
-                          </svg>
-                        </span>
+                      <div class="flex-1">
+                        <h4 class="text-primary text-2xl md:text-xl mb-2.5 leading-none">{{ testimonial.author.name }}</h4>
+                        <span class="text-base text-paragraph dark:text-dark-75">{{ testimonial.author.title }}</span>
                       </div>
-                      <span class="text-xs text-paragraph dark:text-dark-75 leading-none pt-1">5 reviews</span>
                     </div>
-                  </div>
-                </div>
-              </swiper-slide>
-              <swiper-slide>
-                <div class="relative border border-paragraph dark:border-white dark:border-opacity-20 border-opacity-20 rounded-xl p-7 estimonials-shadow overflow-hidden md:p-5">
-                  <div class="flex items-center gap-7 md:gap-5">
-                    <div class="w-24 h-24 bg-primary rounded-lg overflow-hidden relative">
-                      <img src="./assets/testimonials/khoi-le.webp" loading="lazy" alt="Khoi Le" class="w-full h-full object-cover object-center absolute">
+                    <div class="mt-7 mb-4 md:mt-5 md:mb-3">
+                      <p class="text-lg text-paragraph dark:text-dark-75 font-extralight md:text-base">{{ testimonial.quote }}</p>
                     </div>
-                    <div class="flex-1">
-                      <h4 class="text-primary text-2xl md:text-xl mb-2.5 leading-none">Khoi Le</h4>
-                      <span class="text-base text-paragraph dark:text-dark-75">CEO &amp; Founder, Protect Inc.</span>
-                    </div>
-                  </div>
-                  <div class="mt-7 mb-4 md:mt-5 md:mb-3">
-                    <p class="text-lg text-paragraph dark:text-dark-75 font-extralight md:text-base">We've had the pleasure of working with Tarik, and he's truly transformed our digital presence. his coding skills bring our designs to life, resulting in beautiful and user-friendly websites. Tarik is reliable, efficient, and pays attention to detail, ensuring our projects are completed to perfection. his creative problem-solving abilities have been invaluable to our team.</p>
-                  </div>
-                  <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-2.5">
-                      <div class="flex items-center gap-0.5">
-                        <span class="text-primary w-4 h-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-full h-full">
-                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
-                          </svg>
-                        </span>
-                        <span class="text-primary w-4 h-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-full h-full">
-                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
-                          </svg>
-                        </span>
-                        <span class="text-primary w-4 h-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-full h-full">
-                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
-                          </svg>
-                        </span>
-                        <span class="text-primary w-4 h-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-full h-full">
-                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
-                          </svg>
-                        </span>
-                        <span class="text-primary w-4 h-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-full h-full">
-                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
-                          </svg>
-                        </span>
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center gap-2.5">
+                        <div class="flex items-center gap-0.5">
+                          <span class="text-primary w-4 h-4" v-for="(star, index) in testimonial.reviews" :key="index">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-full h-full">
+                              <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
+                            </svg>
+                          </span>
+                        </div>
+                        <span class="text-xs text-paragraph dark:text-dark-75 leading-none pt-1">5 reviews</span>
                       </div>
-                      <span class="text-xs text-paragraph dark:text-dark-75 leading-none pt-1">5 reviews</span>
                     </div>
                   </div>
-                </div>
-              </swiper-slide>
-              <swiper-slide>
-                <div class="relative border border-paragraph dark:border-white dark:border-opacity-20 border-opacity-20 rounded-xl p-7 estimonials-shadow overflow-hidden md:p-5">
-                  <div class="flex items-center gap-7 md:gap-5">
-                    <div class="w-24 h-24 bg-primary rounded-lg overflow-hidden relative">
-                      <img src="./assets/testimonials/zouhir-bahij.webp" loading="lazy" alt="Mohamed El Ghaissani" class="w-full h-full object-cover object-center absolute">
-                    </div>
-                    <div class="flex-1">
-                      <h4 class="text-primary text-2xl md:text-xl mb-2.5 leading-none">Zouhir Bahij</h4>
-                      <span class="text-base text-paragraph dark:text-dark-75">CEO &amp; Founder, YouCan Inc.</span>
-                    </div>
-                  </div>
-                  <div class="mt-7 mb-4 md:mt-5 md:mb-3">
-                    <p class="text-lg text-paragraph dark:text-dark-75 font-extralight md:text-base">Crafting captivating user experiences through code is not just a job for Tarik, it's a passion. With an expert command over front-end technologies, Tarik brings life to designs and transforms ideas into interactive digital realities. Creating seamless journeys for users. As a Front-End Engineer, Tarik illuminates the path where creativity and technology converge.</p>
-                  </div>
-                  <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-2.5">
-                      <div class="flex items-center gap-0.5">
-                        <span class="text-primary w-4 h-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-full h-full">
-                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
-                          </svg>
-                        </span>
-                        <span class="text-primary w-4 h-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-full h-full">
-                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
-                          </svg>
-                        </span>
-                        <span class="text-primary w-4 h-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-full h-full">
-                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
-                          </svg>
-                        </span>
-                        <span class="text-primary w-4 h-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-full h-full">
-                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
-                          </svg>
-                        </span>
-                        <span class="text-primary w-4 h-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-full h-full">
-                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
-                          </svg>
-                        </span>
-                      </div>
-                      <span class="text-xs text-paragraph dark:text-dark-75 leading-none pt-1">5 reviews</span>
-                    </div>
-                  </div>
-                </div>
-              </swiper-slide>
-              <swiper-slide>
-                <div class="relative border border-paragraph dark:border-white dark:border-opacity-20 border-opacity-20 rounded-xl p-7 estimonials-shadow overflow-hidden md:p-5">
-                  <div class="flex items-center gap-7 md:gap-5">
-                    <div class="w-24 h-24 bg-primary rounded-lg overflow-hidden relative">
-                      <img src="./assets/testimonials/elghissani-mohamed.webp" loading="lazy" alt="Mohamed El Ghaissani" class="w-full h-full object-cover object-center absolute">
-                    </div>
-                    <div class="flex-1">
-                      <h4 class="text-primary text-2xl md:text-xl mb-2.5 leading-none">Mohamed El Ghaissani</h4>
-                      <span class="text-base text-paragraph dark:text-dark-75">CEO &amp; Founder, YouCan Inc.</span>
-                    </div>
-                  </div>
-                  <div class="mt-7 mb-4 md:mt-5 md:mb-3">
-                    <p class="text-lg text-paragraph dark:text-dark-75 font-extralight md:text-base">Crafting captivating user experiences through code is not just a job for Tarik, it's a passion. With an expert command over front-end technologies, Tarik brings life to designs and transforms ideas into interactive digital realities. Creating seamless journeys for users. As a Front-End Engineer, Tarik illuminates the path where creativity and technology converge.</p>
-                  </div>
-                  <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-2.5">
-                      <div class="flex items-center gap-0.5">
-                        <span class="text-primary w-4 h-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-full h-full">
-                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
-                          </svg>
-                        </span>
-                        <span class="text-primary w-4 h-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-full h-full">
-                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
-                          </svg>
-                        </span>
-                        <span class="text-primary w-4 h-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-full h-full">
-                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
-                          </svg>
-                        </span>
-                        <span class="text-primary w-4 h-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-full h-full">
-                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
-                          </svg>
-                        </span>
-                        <span class="text-primary w-4 h-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" class="w-full h-full">
-                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path>
-                          </svg>
-                        </span>
-                      </div>
-                      <span class="text-xs text-paragraph dark:text-dark-75 leading-none pt-1">5 reviews</span>
-                    </div>
-                  </div>
-                </div>
-              </swiper-slide>
+                </swiper-slide>
               </swiper-container>
           </div> 
         </div>
