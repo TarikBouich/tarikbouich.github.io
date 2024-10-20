@@ -610,7 +610,7 @@ import LogoIcon from './components/icons/LogoIcon.vue'
       </div>
     </header>
   <main>
-  <section class="pb-16 lg:py-8 md:pt-0 sm:pt-0 bg-black"> 
+  <section class="pb-16 lg:pb-8 md:pt-0 sm:pt-0 bg-black"> 
     <div class="p-0">
       <div class="flex items-start justify-between gap-24 bg-banner md:flex-col lgx:gap-10">
         <div class="w-author top-10 h-[100vh] p-4 sticky md:top-0 md:relative md:w-full md:h-[auto] md-w-full sm-w-full">
