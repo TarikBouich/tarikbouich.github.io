@@ -797,7 +797,7 @@ import LogoIcon from './components/icons/LogoIcon.vue'
           </div>
             <div>
               <swiper-container
-                  :slides-per-view="1"
+                  :slides-per-view="3"
                   :space-between="24"
                   :loop="true"
                   :lazy="true"
@@ -806,14 +806,18 @@ import LogoIcon from './components/icons/LogoIcon.vue'
                     disableOnInteraction: false
                   }"
                   :breakpoints= "{
-                    768: {
+                    0: {
                       slidesPerView: 1,
+                      spaceBetween: 28,
+                    },
+                    768: {
+                      slidesPerView: 3,
                       spaceBetween: 28,
                     }
                   }"
                 >
                 <swiper-slide v-for="(testimonial, index) in testimonials" :key="index">
-                  <div class="relative border border-paragraph dark:border-white dark:border-opacity-20 border-opacity-20 rounded-xl p-7 estimonials-shadow overflow-hidden md:p-5">
+                  <div class="relative border border-paragraph dark:border-white dark:border-opacity-20 border-opacity-20 rounded-xl p-7 estimonials-shadow overflow-hidden md:p-5 h-[495px] overflow-y-scroll">
                     <div class="flex items-center gap-7 md:gap-5">
                       <div class="w-24 h-24 bg-primary rounded-lg overflow-hidden relative">
                         <img :src="`/testimonials/${testimonial.author.image}`" loading="lazy" :alt="testimonial.author.name" class="w-full h-full object-cover object-center absolute">
