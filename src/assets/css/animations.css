@@ -1,0 +1,48 @@
+@keyframes slide {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@layer components {
+  .loader {
+    @apply fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-dark-100;
+  }
+  .loader div:before {
+    content: "Loading";
+    @apply w-full absolute top-0 left-0 overflow-hidden text-primary;
+    border-right: 5px solid;
+    animation: 3s slide linear infinite;
+  }
+  .loader.slide-out div {
+    opacity: 0;
+  }
+  .loader.slide-out {
+    @apply transition-all duration-500 -translate-x-full;
+  }
+  .sending {
+    font-size: 0;
+  }
+  .sending:before {
+    content: "";
+    @apply rounded-full w-6 h-6 border-2 border-white border-opacity-0;
+    border-top-color: #000;
+    animation: 1.5s spin infinite linear;
+  }
+  .dark .sending:before {
+    border-top-color: #EEE;
+  }
+  .spinner {
+    animation: 1.5s spin infinite linear;
+  }
+}

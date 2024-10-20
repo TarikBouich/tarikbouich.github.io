@@ -1,0 +1,27 @@
+@layer components {
+  .cursor {
+    pointer-events: none;
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    -webkit-transition: opacity 0.4s ease, -webkit-transform 0.3s ease;
+    transition: opacity 0.4s ease, -webkit-transform 0.3s ease;
+    -o-transition: transform 0.3s ease, opacity 0.4s ease;
+    transition: transform 0.3s ease, opacity 0.4s ease;
+    transition: transform 0.3s ease, opacity 0.4s ease, -webkit-transform 0.3s ease;
+    z-index: 99999;
+    @apply bg-primary lg:hidden;
+  }
+  .cursor.cursor-hover {
+    -webkit-transform: translate(-50%, -50%) scale(8);
+    -ms-transform: translate(-50%, -50%) scale(8);
+    transform: translate(-50%, -50%) scale(8);
+    opacity: .1;
+  }
+  .cursor.cursor-inner-hover {
+    width: 50px;
+    height: 50px;
+    opacity: .5;
+  }
+}
