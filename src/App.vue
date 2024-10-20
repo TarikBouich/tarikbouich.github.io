@@ -762,7 +762,7 @@ import LogoIcon from './components/icons/LogoIcon.vue'
           </div> 
         </div>
       </div>
-      <div id="portfolio" class="p-10 bg-black container">
+        <div id="portfolio" class="p-10 bg-black container">
         <div class="px-2">
           <div class="mb-8 md:mb-6">
             <div class="border-b border-paragraph dark:border-white dark:border-opacity-20 border-opacity-20 pb-5">
