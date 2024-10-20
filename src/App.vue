@@ -624,7 +624,7 @@ import LogoIcon from './components/icons/LogoIcon.vue'
               <div class="text-center grid gap-2">
                 <h5 class="text-2xl">Tarik Bouich</h5>
                 <p>
-                  <a targt="_blank" href="https://www.upwork.com/freelancers/~01db87c4ac538cb814" target="_blank" class="text-base font-extralight text-dark-75">@Tarik Bouich</a>
+                  <a targt="_blank" href="https://www.upwork.com/freelancers/~01db87c4ac538cb814" target="_blank" class="text-base font-extralight text-dark-75 underline">@Tarik Bouich</a>
                 </p>
                 <ul class="flex items-center justify-center gap-4">
                   <li>
@@ -693,7 +693,14 @@ import LogoIcon from './components/icons/LogoIcon.vue'
                 <h3 class="text-2xl uppercase tracking-widest font-light md:text-xl">About</h3>
               </div>
                 <p class="text-lg font-extralight leading-paragraph text-paragraph">
-                  As a seasoned Front-End Engineer with a deep commitment to crafting sophisticated and user-friendly web interfaces, I bring seven years of hands-on experience in front-end development. Throughout my career, I have refined my expertise in HTML, CSS, and JavaScript,shopify themes ( liquid ) enabling me to design seamless and responsive web applications. Additionally, I am proficient in popular front-end frameworks such as Vue.js, leveraging their capabilities to enhance the interactivity and performance of web-based projects.
+                  ✨ Prime Quality work and Effective communication throughout the complete development process are
+                    my core values.<br>
+
+                    Are you looking for a Vue js developer, a Shopify developer, or a Senior Front-end developer? Then you're at your required destination.<br>
+
+                    🖐 I'm a Senior Front-end developer (Vue js development) with 7 years of experience in developing pixel-perfect responsive web applications<br>
+
+                    🖐 I'm a Senior Front-end developer (Shopify development) with 3+ years of experience in developing pixel-perfect responsive themes
                </p>
             </div>
           </div>
