@@ -750,13 +750,14 @@ import LogoIcon from './components/icons/LogoIcon.vue'
         </div>
       </div>
       <!--  -->
+      
       <div id="services" class="p-10 bg-black container">
         <div class="px-2">
           <div class="border-b border-paragraph dark:border-white dark:border-opacity-20 border-opacity-20 pb-5 mb-5">
             <h3 class="text-2xl uppercase tracking-widest font-light md:text-xl">Services</h3>
           </div>
           <div class="grid gap-8 md:gap-6">
-            <div class="grid grid-cols-2 gap-7 md:grid-cols-2 md:gap-5 sm-grid-cols-1">
+            <div class="grid grid-cols-4 gap-7 md:grid-cols-2 md:gap-5 sm-grid-cols-1">
               <div v-for="(service, index) in services" :key="index" class="relative border border-paragraph dark:border-white dark:border-opacity-30 border-opacity-30 rounded-xl p-7 md:p-5 transition-all duration-300 hover:bg-dark-100 hover:text-white dark:hover:bg-white dark:hover:text-black hover:border-opacity-100 group scale-100 ease-in-out">
                 <div class="flex flex-col gap-3 mb-2">
                   <h3 class="text-6xl md:text-5xl">{{ service.letter }}</h3>
