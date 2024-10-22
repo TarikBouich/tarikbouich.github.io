@@ -727,7 +727,7 @@ import LogoIcon from './components/icons/LogoIcon.vue'
           </div>
           <!-- End Experiences -->
           <!-- Start Skills -->
-          <div class="grid gap-8 md:gap-6 py-20 md:px-6">
+          <div class="grid gap-8 md:gap-6 py-20 pr-10 md:px-6">
             <div class="border-b border-paragraph dark:border-white dark:border-opacity-20 border-opacity-20 pb-5">
               <h3 class="text-2xl uppercase tracking-widest font-light md:text-xl">Skills</h3>
             </div>
@@ -750,7 +750,7 @@ import LogoIcon from './components/icons/LogoIcon.vue'
         </div>
       </div>
       <!--  -->
-      
+
       <div id="services" class="p-10 bg-black container">
         <div class="px-2">
           <div class="border-b border-paragraph dark:border-white dark:border-opacity-20 border-opacity-20 pb-5 mb-5">
