@@ -742,8 +742,8 @@ import LogoIcon from './components/icons/LogoIcon.vue'
                 </div>
                 <div class="flex-1 sm:text-center">
                   <h3 class="text-xl md:text-lg text-left">
-                    <a :href="experience.link" target="_blank" class="text-primary text-md uppercase tracking-widest hover:brightness-105">{{  experience.company }}</a> 
-                    - {{  experience.role }}
+                    <a :href="experience.link" target="_blank" class="text-primary text-md uppercase tracking-widest hover:brightness-105 mb-3">{{  experience.company }}</a><br>
+                   <span class="inline-block mt-2"> - {{  experience.role }}</span>
                   </h3>
                 </div>
               </div>
