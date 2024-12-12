@@ -204,6 +204,18 @@ import LogoIcon from './components/icons/LogoIcon.vue'
           link: 'https://thegoodshirts.com/'
         },
         {
+          image: 'neven.webp',
+          skills:['Shopify'],
+          name:'Neven Eyewear',
+          link: 'https://neveneyewear.com/'
+        },
+        {
+          image: 'freestyle.webp',
+          skills:['Shopify'],
+          name:'Freestyle',
+          link: 'https://www.freestyleusa.com/'
+        },
+        {
           image: 'inkedshop.webp',
           skills:['shopify'],
           name:'InkedShop',
