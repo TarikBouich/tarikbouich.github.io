@@ -229,15 +229,15 @@ import LogoIcon from './components/icons/LogoIcon.vue'
           quote: "Crafting captivating user experiences through code is not just a job for Tarik, it's a passion. With an expert command over front-end technologies, Tarik brings life to designs and transforms ideas into interactive digital realities. Creating seamless journeys for users. As a Front-End Engineer, Tarik illuminates the path where creativity and technology converge.",
           reviews: 5
         },
-        {
-          author: {
-            name: 'Khoi Le',
-            title: 'CEO & Founder, Protect Inc.',
-            image: 'khoi-le.webp'
-          },
-          quote: "We've had the pleasure of working with Tarik, and he's truly transformed our digital presence. his coding skills bring our designs to life, resulting in beautiful and user-friendly websites. Tarik is reliable, efficient, and pays attention to detail, ensuring our projects are completed to perfection. his creative problem-solving abilities have been invaluable to our team.",
-          reviews: 5
-        },
+        // {
+        //   author: {
+        //     name: 'Khoi Le',
+        //     title: 'CEO & Founder, Protect Inc.',
+        //     image: 'khoi-le.webp'
+        //   },
+        //   quote: "We've had the pleasure of working with Tarik, and he's truly transformed our digital presence. his coding skills bring our designs to life, resulting in beautiful and user-friendly websites. Tarik is reliable, efficient, and pays attention to detail, ensuring our projects are completed to perfection. his creative problem-solving abilities have been invaluable to our team.",
+        //   reviews: 5
+        // },
         {
           author: {
             name: 'Anass Ezzouine',
