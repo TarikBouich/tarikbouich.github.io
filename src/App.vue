@@ -52,13 +52,19 @@ import LogoIcon from './components/icons/LogoIcon.vue'
   return {
       experiences: [
         {
-          period: '04/21 - Present',
+          period: '11/24 - Present',
+          company: 'Neven Eyewear',
+          role: 'Front-End Engineer',
+          link: 'https://neveneyewear.com/'
+        },
+        {
+          period: '04/21 - 11/24',
           company: 'Protect',
           role: 'Front-End Engineer',
           link: 'https://protect.inc'
         },
         {
-          period: '04/21 - Present',
+          period: '04/21 - 11/24',
           company: 'Le ventures',
           role: 'Front-End Engineer',
           link: 'https://leventures.com'
@@ -161,6 +167,12 @@ import LogoIcon from './components/icons/LogoIcon.vue'
         }
       ],
       projects: [
+        {
+          image: 'bio.webp',
+          skills:['Shopify'],
+          name:'BioPro',
+          link: 'https://5rnifb-x6.myshopify.com/'
+        },
         {
           image: 'protect.webp',
           skills: ['VueJs', 'TailwindCss'],
@@ -670,7 +682,7 @@ import LogoIcon from './components/icons/LogoIcon.vue'
             <div class="flex items-center gap-20 md:grid md:grid-cols-2 md:gap-6">
               <div class="flex items-center gap-5 md:gap-3 sm:flex-col">
                 <h2 class="text-7xl md:text-5xl">7</h2>
-                <p class="text-base font-extralight text-paragraph sm:text-center">Years <br> of Experance
+                <p class="text-base font-extralight text-paragraph sm:text-center">Years <br> of Experience
                 </p>
               </div>
               <div class="flex items-center gap-5 md:gap-3 sm:flex-col">
@@ -681,8 +693,8 @@ import LogoIcon from './components/icons/LogoIcon.vue'
               </div>
               <div class="md:col-span-2">
                 <a
-                  href="tarik.bouich.pdf"
-                  download="tarik.bouich.pdf"
+                  href="Latest_CV_Tarik_Bouich.pdf"
+                  download="Latest_CV_Tarik_Bouich.pdf"
                   class="text-sm text-white bg-primary px-6 py-4 leading-none flex items-center justify-center rounded-lg tracking-wide hover:brightness-105"
                   >Dwonload C.V</a
                 >
