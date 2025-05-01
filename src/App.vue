@@ -708,7 +708,7 @@ import LogoIcon from './components/icons/LogoIcon.vue'
                   href="Latest_CV_Tarik_Bouich.pdf"
                   download="Latest_CV_Tarik_Bouich.pdf"
                   class="text-sm text-white bg-primary px-6 py-4 leading-none flex items-center justify-center rounded-lg tracking-wide hover:brightness-105"
-                  >Dwonload C.V</a
+                  >download C.V</a
                 >
               </div>
             </div>
