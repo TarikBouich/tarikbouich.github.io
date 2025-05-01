@@ -10,11 +10,11 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "swiper": "^10.2.0",
-    "vue": "^3.3.4",
     "autoprefixer": "^10.4.15",
     "emailjs-com": "^3.2.0",
     "postcss": "^8.4.28",
+    "swiper": "^10.2.0",
+    "vue": "^3.3.4",
     "vue-slick-carousel": "^1.0.6",
     "vue3-carousel": "^0.3.1"
   },
