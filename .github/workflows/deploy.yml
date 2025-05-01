@@ -39,15 +39,8 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v3
 
-      # 👉 Workaround: Pre-download upload-artifact to avoid GitHub Pages error
-      - name: Pre-download upload-artifact action
-        uses: actions/upload-artifact@v3.1.3
-        with:
-          name: dummy
-          path: ./dummy
-
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v1.0.8
         with:
           path: './dist'
 
