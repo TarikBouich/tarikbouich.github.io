@@ -168,6 +168,24 @@ import LogoIcon from './components/icons/LogoIcon.vue'
       ],
       projects: [
         {
+          image: 'neven.webp',
+          skills:['Shopify'],
+          name:'Neven Eyewear',
+          link: 'https://neveneyewear.com/'
+        },
+        {
+          image: 'freestyle.webp',
+          skills:['Shopify'],
+          name:'Freestyle',
+          link: 'https://www.freestyleusa.com/'
+        },
+        {
+          image: 'choosemuse.webp',
+          skills:['Shopify'],
+          name:'Choosemuse',
+          link: 'https://www.choosemuse.com/'
+        },
+        {
           image: 'bio.webp',
           skills:['Shopify'],
           name:'BioPro',
@@ -202,18 +220,6 @@ import LogoIcon from './components/icons/LogoIcon.vue'
           skills:['Shopify'],
           name:'GoodShirts',
           link: 'https://thegoodshirts.com/'
-        },
-        {
-          image: 'neven.webp',
-          skills:['Shopify'],
-          name:'Neven Eyewear',
-          link: 'https://neveneyewear.com/'
-        },
-        {
-          image: 'freestyle.webp',
-          skills:['Shopify'],
-          name:'Freestyle',
-          link: 'https://www.freestyleusa.com/'
         },
         {
           image: 'inkedshop.webp',
@@ -693,24 +699,25 @@ import LogoIcon from './components/icons/LogoIcon.vue'
             </h1>
             <div class="flex items-center gap-20 md:grid md:grid-cols-2 md:gap-6">
               <div class="flex items-center gap-5 md:gap-3 sm:flex-col">
-                <h2 class="text-7xl md:text-5xl">7</h2>
+                <h2 class="text-7xl md:text-5xl">9</h2>
                 <p class="text-base font-extralight text-paragraph sm:text-center">Years <br> of Experience
                 </p>
               </div>
               <div class="flex items-center gap-5 md:gap-3 sm:flex-col">
-                <h2 class="text-7xl md:text-5xl">+40</h2>
+                <h2 class="text-7xl md:text-5xl">+100</h2>
                 <p class="text-base font-extralight text-paragraph sm:text-center">
                   Projects Completed
                 </p>
               </div>
               <div class="md:col-span-2">
                 <a
-                  href="Latest_CV_Tarik_Bouich.pdf"
-                  download="Latest_CV_Tarik_Bouich.pdf"
+                  href="Tarik-CV-2026.pdf"
+                  download="Tarik-CV-2026.pdf"
                   class="text-sm text-white bg-primary px-6 py-4 leading-none flex items-center justify-center rounded-lg tracking-wide hover:brightness-105"
                   >download C.V</a
                 >
               </div>
+
             </div>
             <div id="about" class="grid gap-5 md:gap-4">
               <div class="border-b border-paragraph  border-opacity-10 pb-5">
@@ -722,7 +729,7 @@ import LogoIcon from './components/icons/LogoIcon.vue'
 
                     Are you looking for a Vue js developer, a Shopify developer, or a Senior Front-end developer? Then you're at your required destination.<br>
 
-                    🖐 I'm a Senior Front-end developer (Vue js development) with 7 years of experience in developing pixel-perfect responsive web applications<br>
+                    🖐 I'm a Senior Front-end developer (Vue js development) with 9 years of experience in developing pixel-perfect responsive web applications<br>
 
                     🖐 I'm a Senior Front-end developer (Shopify development) with 3+ years of experience in developing pixel-perfect responsive themes
                </p>
