@@ -95,7 +95,10 @@
   .header__body-burger--active .header__body-burger-icon .bottom,.header__body-burger--active .header__body-burger-icon .top {
       stroke-dashoffset: -68px
   }
-
+  .swiper-button-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
   @media(max-width: 992px) {
     .blur-image {
       width: 100%;
@@ -104,7 +107,6 @@
     .blur-image:after {
         width: 100%;
         height: 100%;
-        background: none;
     }
   }
 }

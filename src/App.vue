@@ -289,7 +289,10 @@ import LogoIcon from './components/icons/LogoIcon.vue'
         message: '',
         type: 'success'
       },
-      isMenuCollapsed: false
+      isMenuCollapsed: false,
+      swiperInstance: null,
+      currentSlide: 0,
+      totalSlides: 0
     }
     
   },
@@ -300,12 +303,14 @@ import LogoIcon from './components/icons/LogoIcon.vue'
       setTimeout(() => {
         this.loading = false
         document.querySelector('body').style.overflow = 'auto'
+        this.initSwiper()
       }, 500)
     } else {
       window.addEventListener('load', () => {
         setTimeout(() => {
           this.loading = false
           document.querySelector('body').style.overflow = 'auto'
+          this.initSwiper()
         }, 500)
       })
     }
@@ -370,6 +375,39 @@ import LogoIcon from './components/icons/LogoIcon.vue'
           document.getElementById('book-a-call').click()
         }
       })
+    },
+    initSwiper() {
+      this.$nextTick(() => {
+        const swiperEl = document.querySelector('swiper-container')
+        if (swiperEl) {
+          swiperEl.addEventListener('swiperinit', (event) => {
+            this.swiperInstance = event.detail[0]
+            this.totalSlides = this.swiperInstance.slides.length
+            this.currentSlide = this.swiperInstance.activeIndex
+            this.updateArrowOpacity()
+          })
+          swiperEl.addEventListener('slidechange', (event) => {
+            if (this.swiperInstance) {
+              this.currentSlide = this.swiperInstance.activeIndex
+              this.updateArrowOpacity()
+            }
+          })
+        }
+      })
+    },
+    updateArrowOpacity() {
+      const prevButton = document.querySelector('.swiper-button-prev')
+      const nextButton = document.querySelector('.swiper-button-next')
+      if (prevButton) {
+        const isDisabled = this.currentSlide === 0
+        prevButton.style.opacity = isDisabled ? '0.5' : '1'
+        prevButton.style.cursor = isDisabled ? 'not-allowed' : 'pointer'
+      }
+      if (nextButton) {
+        const isDisabled = this.currentSlide >= this.totalSlides - 3
+        nextButton.style.opacity = isDisabled ? '0.5' : '1'
+        nextButton.style.cursor = isDisabled ? 'not-allowed' : 'pointer'
+      }
     }
   }
 };
@@ -838,8 +876,9 @@ import LogoIcon from './components/icons/LogoIcon.vue'
               <swiper-container
                   :slides-per-view="3"
                   :space-between="24"
-                  :loop="true"
+                  :loop="false"
                   :lazy="true"
+                  :navigation="{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }"
                   :autoplay="{
                     delay: 6000,
                     disableOnInteraction: false
@@ -884,7 +923,15 @@ import LogoIcon from './components/icons/LogoIcon.vue'
                   </div>
                 </swiper-slide>
               </swiper-container>
-          </div> 
+              <div class="flex justify-center gap-4 mt-4">
+                <div class="swiper-button-prev cursor-pointer bg-white text-black rounded-full w-[30px] h-[30px] flex items-center justify-center">
+                  <ArrowRightIcon class="w-4 h-4 transform rotate-180" />
+                </div>
+                <div class="swiper-button-next cursor-pointer bg-white text-black rounded-full w-[30px] h-[30px] flex items-center justify-center">
+                  <ArrowRightIcon class="w-4 h-4" />
+                </div>
+              </div>
+          </div>
         </div>
       </div>
       
