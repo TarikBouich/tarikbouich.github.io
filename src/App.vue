@@ -20,7 +20,6 @@ import JsIcon from './components/icons/skills/JsIcon.vue'
 import TailwindcssIcon from './components/icons/skills/TailwindcssIcon.vue'
 import UxIcon from './components/icons/skills/UxIcon.vue'
 import VueIcon from './components/icons/skills/VueIcon.vue'
-import ReactIcon from './components/icons/skills/ReactIcon.vue'
 import ShopifyIcon from './components/icons/skills/ShopifyIcon.vue'
 import StarIcon from './components/icons/StarIcon.vue'
 // import CopyrightIcon from './components/icons/CopyrightIcon.vue'
@@ -46,7 +45,6 @@ import LogoIcon from './components/icons/LogoIcon.vue'
     TailwindcssIcon,
     UxIcon,
     VueIcon,
-    ReactIcon,
     ShopifyIcon,
     StarIcon,
     MenuIcon,
@@ -90,11 +88,6 @@ import LogoIcon from './components/icons/LogoIcon.vue'
           {
             title: 'VueJs',
             icon: 'VueIcon',
-            progress: 95
-          },
-          {
-            title: 'ReactJs',
-            icon: 'ReactIcon',
             progress: 95
           },
           {
