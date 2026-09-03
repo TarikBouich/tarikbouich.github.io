@@ -181,22 +181,22 @@ import LogoIcon from './components/icons/LogoIcon.vue'
           link: 'https://neveneyewear.com/'
         },
         {
-          image: 'freestyle.webp',
-          skills:['Shopify'],
-          name:'Freestyle',
-          link: 'https://www.freestyleusa.com/'
-        },
-        {
           image: 'choosemuse.webp',
           skills:['Shopify'],
           name:'Choosemuse',
           link: 'https://www.choosemuse.com/'
         },
         {
-          image: 'bio.webp',
+          image: 'freestyle.webp',
           skills:['Shopify'],
-          name:'BioPro',
-          link: 'https://5rnifb-x6.myshopify.com/'
+          name:'Freestyle',
+          link: 'https://www.freestyleusa.com/'
+        },
+        {
+          image: 'snoga.webp',
+          skills:['Shopify'],
+          name:'Snoga Athletics',
+          link: 'https://snogaathletics.com/'
         },
         {
           image: 'protect.webp',
@@ -205,10 +205,10 @@ import LogoIcon from './components/icons/LogoIcon.vue'
           link: 'https://protect.inc'
         },
         {
-          image: 'snoga.webp',
+          image: 'bio.webp',
           skills:['Shopify'],
-          name:'Snoga Athletics',
-          link: 'https://snogaathletics.com/'
+          name:'BioPro',
+          link: 'https://5rnifb-x6.myshopify.com/'
         },
         {
           image: 'codnetwork.webp',
