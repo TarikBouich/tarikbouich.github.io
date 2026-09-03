@@ -205,10 +205,10 @@ import LogoIcon from './components/icons/LogoIcon.vue'
           link: 'https://protect.inc'
         },
         {
-          image: 'lapermanence.webp',
-          skills:['Bootstrap 4', 'HTML5-CSS3-Javascript'],
-          name:'La permanence',
-          link: 'https://la-permanence.com'
+          image: 'snoga.webp',
+          skills:['Shopify'],
+          name:'Snoga Athletics',
+          link: 'https://snogaathletics.com/'
         },
         {
           image: 'codnetwork.webp',
@@ -741,24 +741,24 @@ import LogoIcon from './components/icons/LogoIcon.vue'
             <h1 class="text-6xl leading-normal md:text-3xl md:leading-normal md:text-center sm:text-2xl">
               Hello, I’m 
               <span class="text-primary">Tarik Bouich</span>.<br class="sm:hidden">
-              Senior <span class="bord">Front-End Developer<i></i></span><br class="sm:hidden"> Based in Morocco.
+              Senior <span class="bord">Front-End Engineer<i></i></span><br class="sm:hidden"><span class="bord"><i></i>Shopify & E-commerce Specialist</span> Based in Morocco. Available for remote work worldwide
             </h1>
             <div class="flex items-center gap-20 md:grid md:grid-cols-2 md:gap-6">
               <div class="flex items-center gap-5 md:gap-3 sm:flex-col">
-                <h2 class="text-7xl md:text-5xl">9</h2>
+                <h2 class="text-7xl md:text-5xl">+8</h2>
                 <p class="text-base font-extralight text-paragraph sm:text-center">Years <br> of Experience
                 </p>
               </div>
               <div class="flex items-center gap-5 md:gap-3 sm:flex-col">
-                <h2 class="text-7xl md:text-5xl">+100</h2>
+                <h2 class="text-7xl md:text-5xl">+40</h2>
                 <p class="text-base font-extralight text-paragraph sm:text-center">
-                  Projects Completed
+                  Projects Delivered
                 </p>
               </div>
               <div class="md:col-span-2">
                 <a
-                  href="Tarik-CV-2026.pdf"
-                  download="Tarik-CV-2026.pdf"
+                  href="CV-Tarik-Bouich.pdf"
+                  download="CV-Tarik-Bouich.pdf"
                   class="text-sm text-white bg-primary px-6 py-4 leading-none flex items-center justify-center rounded-lg tracking-wide hover:brightness-105"
                   >download C.V</a
                 >
@@ -775,9 +775,9 @@ import LogoIcon from './components/icons/LogoIcon.vue'
 
                     Are you looking for a Vue js developer, a Shopify developer, or a Senior Front-end developer? Then you're at your required destination.<br>
 
-                    🖐 I'm a Senior Front-end developer (Vue js development) with 9 years of experience in developing pixel-perfect responsive web applications<br>
+                    🖐 I'm a Senior Front-end developer with <span class="text-white font-semibold">8+ years</span> of experience in developing pixel-perfect responsive web applications<br>
 
-                    🖐 I'm a Senior Front-end developer (Shopify development) with 3+ years of experience in developing pixel-perfect responsive themes
+                    🖐 I'm a Senior Front-end developer (Shopify development) with <span class="text-white font-semibold">5+ years</span> of experience in developing pixel-perfect responsive themes
                </p>
             </div>
           </div>
@@ -998,10 +998,13 @@ import LogoIcon from './components/icons/LogoIcon.vue'
                 <div class="flex-1">
                   <button
                     type="submit"
-                    class="relative overflow-hidden border border-paragraph dark:border-white dark:border-opacity-20 border-opacity-10 uppercase text-black dark:text-white tracking-widest bg-transparent px-4 py-5 leading-none flex items-center justify-center rounded-lg w-full group transition-colors duration-500 dark:hover:text-black hover:text-black h-14 outline-none"
+                    class="relative overflow-hidden border border-paragraph dark:border-white dark:border-opacity-20 border-opacity-10 uppercase text-black dark:text-white tracking-widest bg-transparent px-4 py-5 leading-none flex items-center justify-center rounded-lg w-full group transition-colors duration-500 dark:hover:text-white hover:text-white h-14 outline-none"
                     :class="{ 'sending cursor-not-allowed': sending }"
                   >
-                    Send a message
+                    <span
+                      v-if="!sending"
+                      class="relative z-10"
+                    >Send a message</span>
                     <span
                       v-if="!sending"
                       class="absolute inset-0 w-1.5 bg-primary transition-all duration-500 group-hover:w-full -z-5"
