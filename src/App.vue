@@ -20,6 +20,8 @@ import JsIcon from './components/icons/skills/JsIcon.vue'
 import TailwindcssIcon from './components/icons/skills/TailwindcssIcon.vue'
 import UxIcon from './components/icons/skills/UxIcon.vue'
 import VueIcon from './components/icons/skills/VueIcon.vue'
+import ReactIcon from './components/icons/skills/ReactIcon.vue'
+import ShopifyIcon from './components/icons/skills/ShopifyIcon.vue'
 import StarIcon from './components/icons/StarIcon.vue'
 // import CopyrightIcon from './components/icons/CopyrightIcon.vue'
 import MenuIcon from './components/icons/MenuIcon.vue'
@@ -44,6 +46,8 @@ import LogoIcon from './components/icons/LogoIcon.vue'
     TailwindcssIcon,
     UxIcon,
     VueIcon,
+    ReactIcon,
+    ShopifyIcon,
     StarIcon,
     MenuIcon,
     LogoIcon
@@ -86,6 +90,16 @@ import LogoIcon from './components/icons/LogoIcon.vue'
           {
             title: 'VueJs',
             icon: 'VueIcon',
+            progress: 95
+          },
+          {
+            title: 'ReactJs',
+            icon: 'ReactIcon',
+            progress: 95
+          },
+          {
+            title: 'Themes',
+            icon: 'ShopifyIcon',
             progress: 95
           },
           {
@@ -679,6 +693,7 @@ import LogoIcon from './components/icons/LogoIcon.vue'
       </div>
     </header>
   <main>
+
   <section class="pb-16 lg:pb-8 md:pt-0 sm:pt-0 bg-black"> 
     <div class="p-0">
       <div class="flex items-start justify-between gap-24 bg-banner md:flex-col lgx:gap-10">
@@ -811,7 +826,7 @@ import LogoIcon from './components/icons/LogoIcon.vue'
                   <div class="h-progress relative bg-dark-100 dark:bg-white bg-opacity-10">
                       <div class="bg-dark-100 dark:bg-white h-full absolute transition-all duration-500" :data-progress="skill.progress" style="width: {{ skill.progress }}%;"></div>
                   </div>
-                  <span class="absolute top-2.5 right-2.5 text-badge text-white dark:text-black bg-dark-100 dark:bg-white px-2.5 py-1 rounded-full bg-opacity-90">{{ skill.progress }}%</span>
+                  <!-- <span class="absolute top-2.5 right-2.5 text-badge text-white dark:text-black bg-dark-100 dark:bg-white px-2.5 py-1 rounded-full bg-opacity-90">{{ skill.progress }}%</span> -->
                 </div>
             </div>
           </div>
