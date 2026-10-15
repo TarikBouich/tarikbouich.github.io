@@ -46,6 +46,16 @@
     }
   }
   
+  .header-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(0, 0, 0, .6);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(255, 255, 255, .06);
+  }
+
   .bg-banner {
     background: url(../banner_bg.jpeg);
     background-position: center;

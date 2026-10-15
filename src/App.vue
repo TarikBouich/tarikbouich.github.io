@@ -56,19 +56,19 @@ import LogoIcon from './components/icons/LogoIcon.vue'
         {
           period: '11/24 - Present',
           company: 'Neven Eyewear',
-          role: 'Front-End Engineer',
+          role: 'Sr Shopify developer - Front-End Engineer',
           link: 'https://neveneyewear.com/'
         },
         {
           period: '04/21 - 11/24',
           company: 'Protect',
-          role: 'Front-End Engineer',
+          role: 'Sr Shopify developer - Front-End Engineer',
           link: 'https://protect.inc'
         },
         {
           period: '04/21 - 11/24',
           company: 'Le ventures',
-          role: 'Front-End Engineer',
+          role: 'Sr Shopify developer - Front-End Engineer',
           link: 'https://leventures.com'
         },
         {
@@ -299,7 +299,15 @@ import LogoIcon from './components/icons/LogoIcon.vue'
       isMenuCollapsed: false,
       swiperInstance: null,
       currentSlide: 0,
-      totalSlides: 0
+      totalSlides: 0,
+      navLinks: [
+        { label: 'HOME', href: '/', section: null },
+        { label: 'ABOUT', section: '#about' },
+        { label: 'SERVICES', section: '#services' },
+        { label: 'PORTFOLIO', section: '#portfolio' },
+        { label: 'TESTIMONIALS', section: '#testimonials' },
+        { label: 'CONTACT', section: '#contact' }
+      ]
     }
     
   },
@@ -376,6 +384,12 @@ import LogoIcon from './components/icons/LogoIcon.vue'
       })
       this.isMenuCollapsed = false
     },
+    handleNavClick(event, link) {
+      if (link.section) {
+        event.preventDefault()
+        this.scrollToSection(link.section)
+      }
+    },
     checkIfUserClickBKey() {
       document.addEventListener('keypress', (e) => {
         if (e.key === 'b' || e.key === 'B') {
@@ -426,9 +440,7 @@ import LogoIcon from './components/icons/LogoIcon.vue'
     <Loader :class="{ 'slide-out': !loading }" />
     <ScrollToTop />
     <!-- <SwitchTheme /> -->
-    <header
-        class="py-2.5 md:border-b md:border-dark-75 dark:md:border-dark-75 md:border-opacity-50 dark:md:border-opacity-10"
-      >
+    <header class="header-sticky py-3">
       <div class="container">
         <div class="flex items-center justify-between relative">
           <div class="flex items-center justify-between md:w-full">
@@ -447,172 +459,18 @@ import LogoIcon from './components/icons/LogoIcon.vue'
             </div>
           </div>
           <ul class="flex items-center justify-center gap-10 flex-1 md:hidden lgx:gap-5">
-            <li>
-              <a href="/" class="text-sm uppercase tracking-widest lgx:text-xs">
-                <span class="rolling-text">
-                  <div>
-                    <span class="letter">H</span>
-                    <span class="letter">O</span>
-                    <span class="letter">M</span>
-                    <span class="letter">E</span>
-                  </div>
-                  <div class="text-primary dark:hover:brightness-105">
-                    <span class="letter">H</span>
-                    <span class="letter">O</span>
-                    <span class="letter">M</span>
-                    <span class="letter">E</span>
-                  </div>
-                </span>
-              </a>
-            </li>
-            <li>
+            <li v-for="link in navLinks" :key="link.label">
               <a
-                @click.prevent="scrollToSection('#about')"
-                href="#about"
+                :href="link.section || link.href"
+                @click="handleNavClick($event, link)"
                 class="text-sm uppercase tracking-widest lgx:text-xs"
               >
                 <span class="rolling-text">
                   <div>
-                    <span class="letter">A</span>
-                    <span class="letter">B</span>
-                    <span class="letter">O</span>
-                    <span class="letter">U</span>
-                    <span class="letter">T</span>
+                    <span v-for="(letter, i) in link.label" :key="'top-' + i" class="letter">{{ letter }}</span>
                   </div>
                   <div class="text-primary dark:hover:brightness-105">
-                    <span class="letter">A</span>
-                    <span class="letter">B</span>
-                    <span class="letter">O</span>
-                    <span class="letter">U</span>
-                    <span class="letter">T</span>
-                  </div>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                @click.prevent="scrollToSection('#services')"
-                href="#services"
-                class="text-sm uppercase tracking-widest lgx:text-xs"
-              >
-                <span class="rolling-text">
-                  <div>
-                    <span class="letter">S</span>
-                    <span class="letter">E</span>
-                    <span class="letter">R</span>
-                    <span class="letter">V</span>
-                    <span class="letter">I</span>
-                    <span class="letter">C</span>
-                    <span class="letter">E</span>
-                    <span class="letter">S</span>
-                  </div>
-                  <div class="text-primary dark:hover:brightness-105">
-                    <span class="letter">S</span>
-                    <span class="letter">E</span>
-                    <span class="letter">R</span>
-                    <span class="letter">V</span>
-                    <span class="letter">I</span>
-                    <span class="letter">C</span>
-                    <span class="letter">E</span>
-                    <span class="letter">S</span>
-                  </div>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                @click.prevent="scrollToSection('#portfolio')"
-                href="#portfolio"
-                class="text-sm uppercase tracking-widest lgx:text-xs"
-              >
-                <span class="rolling-text">
-                  <div>
-                    <span class="letter">P</span>
-                    <span class="letter">O</span>
-                    <span class="letter">R</span>
-                    <span class="letter">T</span>
-                    <span class="letter">F</span>
-                    <span class="letter">O</span>
-                    <span class="letter">L</span>
-                    <span class="letter">I</span>
-                    <span class="letter">O</span>
-                  </div>
-                  <div class="text-primary dark:hover:brightness-105">
-                    <span class="letter">P</span>
-                    <span class="letter">O</span>
-                    <span class="letter">R</span>
-                    <span class="letter">T</span>
-                    <span class="letter">F</span>
-                    <span class="letter">O</span>
-                    <span class="letter">L</span>
-                    <span class="letter">I</span>
-                    <span class="letter">O</span>
-                  </div>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                @click.prevent="scrollToSection('#testimonials')"
-                href="#testimonials"
-                class="text-sm uppercase tracking-widest lgx:text-xs"
-              >
-                <span class="rolling-text">
-                  <div>
-                    <span class="letter">T</span>
-                    <span class="letter">E</span>
-                    <span class="letter">S</span>
-                    <span class="letter">T</span>
-                    <span class="letter">I</span>
-                    <span class="letter">M</span>
-                    <span class="letter">O</span>
-                    <span class="letter">N</span>
-                    <span class="letter">I</span>
-                    <span class="letter">A</span>
-                    <span class="letter">L</span>
-                    <span class="letter">S</span>
-                  </div>
-                  <div class="text-primary dark:hover:brightness-105">
-                    <span class="letter">T</span>
-                    <span class="letter">E</span>
-                    <span class="letter">S</span>
-                    <span class="letter">T</span>
-                    <span class="letter">I</span>
-                    <span class="letter">M</span>
-                    <span class="letter">O</span>
-                    <span class="letter">N</span>
-                    <span class="letter">I</span>
-                    <span class="letter">A</span>
-                    <span class="letter">L</span>
-                    <span class="letter">S</span>
-                  </div>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                @click.prevent="scrollToSection('#contact')"
-                href="#contact"
-                class="text-sm uppercase tracking-widest lgx:text-xs"
-              >
-                <span class="rolling-text">
-                  <div>
-                    <span class="letter">C</span>
-                    <span class="letter">O</span>
-                    <span class="letter">N</span>
-                    <span class="letter">T</span>
-                    <span class="letter">A</span>
-                    <span class="letter">C</span>
-                    <span class="letter">T</span>
-                  </div>
-                  <div class="text-primary dark:hover:brightness-105">
-                    <span class="letter">C</span>
-                    <span class="letter">O</span>
-                    <span class="letter">N</span>
-                    <span class="letter">T</span>
-                    <span class="letter">A</span>
-                    <span class="letter">C</span>
-                    <span class="letter">T</span>
+                    <span v-for="(letter, i) in link.label" :key="'bot-' + i" class="letter">{{ letter }}</span>
                   </div>
                 </span>
               </a>
@@ -620,56 +478,15 @@ import LogoIcon from './components/icons/LogoIcon.vue'
           </ul>
           <ul
             v-if="isMenuCollapsed"
-              class="hidden md:absolute md:top-full md:grid md:justify-normal md:z-10 md:mt-3 bg-dark-100 dark:md:bg-dark-header md:gap-0 md:-mx-4 md:w-header"
+              class="hidden md:absolute md:top-full md:grid md:justify-normal md:z-10 md:mt-3 glass md:gap-0 md:-mx-4 md:w-header md:rounded-b-2xl md:overflow-hidden"
             >
-            <li>
-              <a href="/" class="text-sm uppercase tracking-widest md:block md:w-full md:p-4">
-                Home
-              </a>
-            </li>
-            <li>
+            <li v-for="link in navLinks" :key="link.label">
               <a
-                @click.prevent="scrollToSection('#about')"
-                href="#about"
-                class="text-sm uppercase tracking-widest md:block md:w-full md:p-4"
+                :href="link.section || link.href"
+                @click="handleNavClick($event, link)"
+                class="text-sm uppercase tracking-widest md:block md:w-full md:p-4 hover:text-primary transition-colors"
               >
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                @click.prevent="scrollToSection('#services')"
-                href="#services"
-                class="text-sm uppercase tracking-widest md:block md:w-full md:p-4"
-              >
-                Services
-              </a>
-            </li>
-            <li>
-              <a
-                @click.prevent="scrollToSection('#portfolio')"
-                href="#portfolio"
-                class="text-sm uppercase tracking-widest md:block md:w-full md:p-4"
-              >
-                Portfolio
-              </a>
-            </li>
-            <li>
-              <a
-                @click.prevent="scrollToSection('#testimonials')"
-                href="#testimonials"
-                class="text-sm uppercase tracking-widest md:block md:w-full md:p-4"
-              >
-                Testimonials
-              </a>
-            </li>
-            <li>
-              <a
-                @click.prevent="scrollToSection('#contact')"
-                href="#contact"
-                class="text-sm uppercase tracking-widest md:block md:w-full md:p-4"
-              >
-                Contact
+                {{ link.label }}
               </a>
             </li>
           </ul>
@@ -687,45 +504,47 @@ import LogoIcon from './components/icons/LogoIcon.vue'
     </header>
   <main>
 
-  <section class="pb-16 lg:pb-8 md:pt-0 sm:pt-0 bg-black"> 
+  <section class="pb-16 lg:pb-8 md:pt-0 sm:pt-0 bg-black">
     <div class="p-0">
       <div class="flex items-start justify-between gap-24 bg-banner md:flex-col lgx:gap-10">
         <div class="w-author top-10 h-[100vh] p-4 sticky md:top-0 md:relative md:w-full md:h-[auto] md-w-full sm-w-full">
-          <!-- <div class="bg-primary absolute w-full top-0 -left-[30%] bottom-0 clip-area"></div>  -->
-          <div class="grid gap-6 md:gap-[5rem]">
-            <div class="bg-black rounded-xl overflow-hidden relative blur-image mt-10">
-              <img src="./assets/profile.jpeg" loading="lazy" alt="Tarik Bouich" class="w-full h-auto" width="400" height="410">
+          <div class="grid gap-8 md:gap-[5rem]">
+            <div class="relative mt-10">
+              <div class="absolute inset-0 bg-white/10 blur-3xl rounded-full pointer-events-none scale-90"></div>
+              <div class="bg-black rounded-full overflow-hidden relative blur-image glow-primary">
+                <img src="./assets/profile.jpeg" loading="lazy" alt="Tarik Bouich" class="w-full h-auto" width="400" height="410">
+              </div>
             </div>
             <div class="grid gap-5">
               <div class="text-center grid gap-2">
                 <h5 class="text-2xl">Tarik Bouich</h5>
                 <p>
-                  <a targt="_blank" href="https://www.upwork.com/freelancers/~01db87c4ac538cb814" target="_blank" class="text-base font-extralight text-dark-75 underline">@Tarik Bouich</a>
+                  <a href="https://www.upwork.com/freelancers/~01db87c4ac538cb814" target="_blank" class="text-base font-extralight text-dark-75 underline hover:text-primary transition-colors">@Tarik Bouich</a>
                 </p>
                 <ul class="flex items-center justify-center gap-4">
                   <li>
-                    <a href="https://facebook.com/tarik.bouich.3" target="_blank" aria-label="Tarik Bouich Facebook" class="w-10 h-10 rounded-full border border-paragraph border-opacity-20 dark:border-white flex items-center justify-center text-black dark:text-white dark:border-opacity-10 transition-all duration-500 hover:bg-dark-100 bg-opacity-90 dark:bg-opacity-100 hover:text-white dark:hover:bg-white dark:hover:text-black">
+                    <a href="https://facebook.com/tarik.bouich.3" target="_blank" aria-label="Tarik Bouich Facebook" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white transition-all duration-500 hover:bg-primary hover:border-primary hover:-translate-y-0.5">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" fill="currentColor" class="w-3.5 h-3.5">
                         <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
                       </svg>
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.linkedin.com/in/tarik-bouich-8bba87136/" aria-label="Tarik Bouich Linkedin" target="_blank" class="w-10 h-10 rounded-full border border-paragraph border-opacity-20 dark:border-white flex items-center justify-center text-black dark:text-white dark:border-opacity-10 transition-all duration-500 hover:bg-dark-100 bg-opacity-90 dark:bg-opacity-100 hover:text-white dark:hover:bg-white dark:hover:text-black">
+                    <a href="https://www.linkedin.com/in/tarik-bouich-8bba87136/" aria-label="Tarik Bouich Linkedin" target="_blank" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white transition-all duration-500 hover:bg-primary hover:border-primary hover:-translate-y-0.5">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" class="w-3.5 h-3.5">
                         <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
                       </svg>
                     </a>
                   </li>
                   <li>
-                    <a href="https://github.com/TarikBouich" target="_blank" aria-label="Tarik Bouich Github" class="w-10 h-10 rounded-full border border-paragraph border-opacity-20 dark:border-white flex items-center justify-center text-black dark:text-white dark:border-opacity-10 transition-all duration-500 hover:bg-dark-100 bg-opacity-90 dark:bg-opacity-100 hover:text-white dark:hover:bg-white dark:hover:text-black">
+                    <a href="https://github.com/TarikBouich" target="_blank" aria-label="Tarik Bouich Github" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white transition-all duration-500 hover:bg-primary hover:border-primary hover:-translate-y-0.5">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" fill="currentColor" class="w-3.5 h-3.5">
                         <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
                       </svg>
                     </a>
                   </li>
                   <li>
-                    <a href="mailto:tarik.front@gmail.com" target="_blank" aria-label="Tarik Bouich Email" class="w-10 h-10 rounded-full border border-paragraph border-opacity-20 dark:border-white flex items-center justify-center text-black dark:text-white dark:border-opacity-10 transition-all duration-500 hover:bg-dark-100 bg-opacity-90 dark:bg-opacity-100 hover:text-white dark:hover:bg-white dark:hover:text-black">
+                    <a href="mailto:tarik.front@gmail.com" target="_blank" aria-label="Tarik Bouich Email" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white transition-all duration-500 hover:bg-primary hover:border-primary hover:-translate-y-0.5">
                       <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" fill="currentColor" class="w-3.5 h-3.5">
                         <path d="M256 64C150 64 64 150 64 256s86 192 192 192c17.7 0 32 14.3 32 32s-14.3 32-32 32C114.6 512 0 397.4 0 256S114.6 0 256 0S512 114.6 512 256v32c0 53-43 96-96 96c-29.3 0-55.6-13.2-73.2-33.9C320 371.1 289.5 384 256 384c-70.7 0-128-57.3-128-128s57.3-128 128-128c27.9 0 53.7 8.9 74.7 24.1c5.7-5 13.1-8.1 21.3-8.1c17.7 0 32 14.3 32 32v80 32c0 17.7 14.3 32 32 32s32-14.3 32-32V256c0-106-86-192-192-192zm64 192a64 64 0 1 0 -128 0 64 64 0 1 0 128 0z"></path>
                       </svg>
@@ -738,19 +557,19 @@ import LogoIcon from './components/icons/LogoIcon.vue'
         </div>
         <div class="flex-1 md">
           <div class="grid gap-16 md:gap-8 mb-10 md:px-6">
-            <h1 class="text-6xl leading-normal md:text-3xl md:leading-normal md:text-center sm:text-2xl">
-              Hello, I’m 
-              <span class="text-primary">Tarik Bouich</span>.<br class="sm:hidden">
+            <h1 v-reveal.up class="text-6xl leading-normal md:text-3xl md:leading-normal md:text-center sm:text-2xl">
+              Hello, I’m
+              <span class="gradient-text font-semibold">Tarik Bouich</span>.<br class="sm:hidden">
               Senior <span class="bord">Front-End Engineer<i></i></span><br class="sm:hidden"><span class="bord"><i></i>Shopify & E-commerce Specialist</span> Based in Morocco. Available for remote work worldwide
             </h1>
-            <div class="flex items-center gap-20 md:grid md:grid-cols-2 md:gap-6">
-              <div class="flex items-center gap-5 md:gap-3 sm:flex-col">
-                <h2 class="text-7xl md:text-5xl">+8</h2>
+            <div class="flex items-center gap-6 md:grid md:grid-cols-2 md:gap-6">
+              <div v-reveal.up class="glass flex-1 flex items-center gap-5 rounded-2xl px-7 py-6 border-glow transition-all duration-500 md:gap-3 sm:flex-col">
+                <h2 class="text-5xl md:text-4xl text-primary font-semibold">+9</h2>
                 <p class="text-base font-extralight text-paragraph sm:text-center">Years <br> of Experience
                 </p>
               </div>
-              <div class="flex items-center gap-5 md:gap-3 sm:flex-col">
-                <h2 class="text-7xl md:text-5xl">+40</h2>
+              <div v-reveal.up="120" class="glass flex-1 flex items-center gap-5 rounded-2xl px-7 py-6 border-glow transition-all duration-500 md:gap-3 sm:flex-col">
+                <h2 class="text-5xl md:text-4xl text-primary font-semibold">+40</h2>
                 <p class="text-base font-extralight text-paragraph sm:text-center">
                   Projects Delivered
                 </p>
@@ -759,17 +578,18 @@ import LogoIcon from './components/icons/LogoIcon.vue'
                 <a
                   href="CV-Tarik-Bouich.pdf"
                   download="CV-Tarik-Bouich.pdf"
-                  class="text-sm text-white bg-primary px-6 py-4 leading-none flex items-center justify-center rounded-lg tracking-wide hover:brightness-105"
+                  class="text-sm text-white bg-primary px-6 py-4 leading-none flex items-center justify-center rounded-xl tracking-wide hover:brightness-110 hover:-translate-y-0.5 transition-all duration-300"
                   >download C.V</a
                 >
               </div>
 
             </div>
             <div id="about" class="grid gap-5 md:gap-4">
-              <div class="border-b border-paragraph  border-opacity-10 pb-5">
+              <div v-reveal.up class="border-b border-white/10 pb-5 flex items-baseline gap-4">
+                <span class="section-index text-sm">01</span>
                 <h3 class="text-2xl uppercase tracking-widest font-light md:text-xl">About</h3>
               </div>
-                <p class="text-lg font-extralight leading-paragraph text-paragraph">
+                <p v-reveal.up class="text-lg font-extralight leading-paragraph text-paragraph">
                   ✨ Prime Quality work and Effective communication throughout the complete development process are
                     my core values.<br>
 
@@ -783,20 +603,19 @@ import LogoIcon from './components/icons/LogoIcon.vue'
           </div>
           <!-- Start Experiences -->
           <div class="grid gap-8 md:gap-6 py-20 md:px-6">
-            <div class="border-b border-paragraph dark:border-white dark:border-opacity-20 border-opacity-20 pb-5 mb-5">
-              <h3 class="text-2xl uppercase tracking-widest font-light md:text-xl">Experience Porfessional</h3>
+            <div v-reveal.up class="border-b border-white/10 pb-5 mb-5 flex items-baseline gap-4">
+              <span class="section-index text-sm">02</span>
+              <h3 class="text-2xl uppercase tracking-widest font-light md:text-xl">Experience Professional</h3>
             </div>
-            <div class="grid gap-5">
+            <div class="grid gap-3">
 
-              <div v-for="(experience, index) in experiences" :key="index" class="flex flex-col relative justify-between gap-2 md:gap-2 md:pb-5 border-l border-paragraph border-opacity-10 p-6">
-                <span class="absolute top-6 -left-1 w-2 h-2 bg-paragraph rounded-full"></span>
-                <div class="py-2 text-left text-xs text-white w-date">
-                  {{  experience.period }}
-                </div>
+              <div v-for="(experience, index) in experiences" :key="index" v-reveal.up="index * 80" class="group flex flex-col relative gap-3 border-l border-white/10 pl-8 pr-6 py-6 rounded-r-2xl transition-all duration-500 hover:border-primary/50 hover:bg-white/[.03]">
+                <span class="absolute top-8 -left-[5px] w-2.5 h-2.5 bg-primary rounded-full dot-glow"></span>
+                <span class="inline-block w-fit text-[11px] uppercase tracking-widest text-primary border border-primary/30 rounded-full px-3 py-1">{{  experience.period }}</span>
                 <div class="flex-1 sm:text-center">
                   <h3 class="text-xl md:text-lg text-left">
-                    <a :href="experience.link" target="_blank" class="text-primary text-md uppercase tracking-widest hover:brightness-105 mb-3">{{  experience.company }}</a><br>
-                   <span class="inline-block mt-2"> - {{  experience.role }}</span>
+                    <a :href="experience.link" target="_blank" class="text-white text-md uppercase tracking-widest hover:text-primary transition-colors">{{  experience.company }}</a>
+                   <span class="inline-block mt-2 text-paragraph font-light"> — {{  experience.role }}</span>
                   </h3>
                 </div>
               </div>
@@ -805,21 +624,21 @@ import LogoIcon from './components/icons/LogoIcon.vue'
           <!-- End Experiences -->
           <!-- Start Skills -->
           <div class="grid gap-8 md:gap-6 py-20 pr-10 md:px-6">
-            <div class="border-b border-paragraph dark:border-white dark:border-opacity-20 border-opacity-20 pb-5">
+            <div v-reveal.up class="border-b border-white/10 pb-5 flex items-baseline gap-4">
+              <span class="section-index text-sm">03</span>
               <h3 class="text-2xl uppercase tracking-widest font-light md:text-xl">Skills</h3>
             </div>
             <div class="grid grid-cols-4 gap-7 md:grid-cols-2 md:gap-5 sm-grid-cols-1">
-                <div v-for="(skill, index) in skills" :key="index" class="relative border border-paragraph dark:border-white dark:border-opacity-20 border-opacity-20 rounded-xl px-7 pt-7 md:px-5 md:pt-5">
+                <div v-for="(skill, index) in skills" :key="index" v-reveal.up="index * 60" class="progress-reveal relative border border-white/10 rounded-2xl px-7 py-7 md:px-5 md:py-5 border-glow transition-all duration-500 hover:-translate-y-1">
                   <div class="flex items-center gap-5 mb-7 md:mb-5">
                       <div class="w-10 h-10">
                         <component :is="skill.icon" class="w-full h-full"/>
                       </div>
                       <h4 class="text-lg capitalize">{{  skill.title }}</h4>
                   </div>
-                  <div class="h-progress relative bg-dark-100 dark:bg-white bg-opacity-10">
-                      <div class="bg-dark-100 dark:bg-white h-full absolute transition-all duration-500" :data-progress="skill.progress" style="width: {{ skill.progress }}%;"></div>
+                  <div class="h-progress relative bg-white/10 rounded-full overflow-hidden">
+                      <div class="progress-fill progress-fill-gradient h-full absolute left-0 top-0 rounded-full" :style="{ '--progress': skill.progress + '%' }"></div>
                   </div>
-                  <!-- <span class="absolute top-2.5 right-2.5 text-badge text-white dark:text-black bg-dark-100 dark:bg-white px-2.5 py-1 rounded-full bg-opacity-90">{{ skill.progress }}%</span> -->
                 </div>
             </div>
           </div>
@@ -830,19 +649,20 @@ import LogoIcon from './components/icons/LogoIcon.vue'
 
       <div id="services" class="p-10 bg-black container">
         <div class="px-2">
-          <div class="border-b border-paragraph dark:border-white dark:border-opacity-20 border-opacity-20 pb-5 mb-5">
+          <div v-reveal.up class="border-b border-white/10 pb-5 mb-8 flex items-baseline gap-4">
+            <span class="section-index text-sm">04</span>
             <h3 class="text-2xl uppercase tracking-widest font-light md:text-xl">Services</h3>
           </div>
           <div class="grid gap-8 md:gap-6">
-            <div class="grid grid-cols-4 gap-7 md:grid-cols-2 md:gap-5 sm-grid-cols-1">
-              <div v-for="(service, index) in services" :key="index" class="relative border border-paragraph dark:border-white dark:border-opacity-30 border-opacity-30 rounded-xl p-7 md:p-5 transition-all duration-300 hover:bg-dark-100 hover:text-white dark:hover:bg-white dark:hover:text-black hover:border-opacity-100 group scale-100 ease-in-out">
-                <div class="flex flex-col gap-3 mb-2">
-                  <h3 class="text-6xl md:text-5xl">{{ service.letter }}</h3>
+            <div class="grid grid-cols-4 gap-6 md:grid-cols-2 md:gap-5 sm-grid-cols-1">
+              <div v-for="(service, index) in services" :key="index" v-reveal.up="index * 60" class="card-sheen group relative overflow-hidden border border-white/10 rounded-2xl p-8 md:p-5 transition-all duration-500 hover:border-white/25 hover:bg-white/[.03] hover:-translate-y-1 hover:shadow-[0_30px_60px_-34px_rgba(0,0,0,.95)]" :class="(index % 4 === 0 || index % 4 === 3) ? 'col-span-2 md:col-span-1' : ''">
+                <span class="ghost-letter">{{ service.letter }}</span>
+                <div class="relative z-10 flex flex-col gap-3">
                   <h4 class="text-lg capitalize">{{ service.title }}</h4>
+                  <p class="text-base font-extralight text-paragraph leading-relaxed">
+                    {{ service.description }}
+                  </p>
                 </div>
-                <p class="text-base font-extralight text-paragraph group-hover:text-white dark:text-dark-75 dark:group-hover:text-black">
-                  {{ service.description }}
-                </p>
               </div>
             </div>
           </div> 
@@ -851,21 +671,28 @@ import LogoIcon from './components/icons/LogoIcon.vue'
         <div id="portfolio" class="p-10 bg-black container">
           <div class="px-2">
             <div class="mb-8 md:mb-6">
-              <div class="border-b border-paragraph dark:border-white dark:border-opacity-20 border-opacity-20 pb-5">
+              <div v-reveal.up class="border-b border-white/10 pb-5 flex items-baseline gap-4">
+                <span class="section-index text-sm">05</span>
                 <h3 class="text-2xl uppercase tracking-widest md:text-xl">Portfolio</h3>
               </div>
             </div>
             <div class="grid overflow-hidden grid-cols-2 gap-x-7 gap-y-10 sm-grid-cols-1 md:grid-cols-2 md:gap-y-8 md:gap-x-6">
-              <div v-for="(project, key) in projects" :key="key" class="relative group">
-                <div class="h-project overflow-hidden rounded-xl bg-dark-100 border border-paragraph border-opacity-0 bg-opacity-10 dark:border-none dark:bg-white relative md:h-80">
-                  <img :src="`/projects/${project.image}`" loading="lazy" :alt="project.name" class="w-full h-full object-cover rounded-xl object-top">
+              <div v-for="(project, key) in projects" :key="key" v-reveal.up="key * 70" class="relative group">
+                <div class="h-project overflow-hidden rounded-2xl bg-dark-100 relative md:h-80 project-zoom border border-white/5">
+                  <img :src="`/projects/${project.image}`" loading="lazy" :alt="project.name" class="w-full h-full object-cover object-top">
+                  <div class="project-overlay absolute inset-0 flex items-end p-7 md:p-5">
+                    <span class="flex items-center gap-2 text-white text-sm font-medium uppercase tracking-widest">
+                      View project
+                      <ArrowRightIcon class="w-4 h-4" />
+                    </span>
+                  </div>
                 </div>
-                <div class="mt-7 px-2">
-                  <ul class="flex items-center flex-wrap gap-x-2 gap-y-2.5 mb-4">
-                    <li v-for="(skill, index) in project.skills" class="dark:text-black dark:bg-white text-white bg-dark-100 bg-opacity-90 dark:bg-opacity-100 py-1 px-3 rounded-lg text-xs tracking-wide" :key="index">{{ skill }}</li>
+                <div class="mt-6 px-1">
+                  <ul class="flex items-center flex-wrap gap-2 mb-3">
+                    <li v-for="(skill, index) in project.skills" class="text-[11px] uppercase tracking-wider text-paragraph border border-white/10 bg-white/[.03] py-1 px-3 rounded-full" :key="index">{{ skill }}</li>
                   </ul>
                   <div class="flex items-center justify-between">
-                    <h4 class="leading-none text-lg text-black dark:text-white font-medium tracking-wider transition-colors group-hover:text-primary">{{ project.name }} </h4>
+                    <h4 class="leading-none text-lg text-white/90 font-medium tracking-wider transition-colors group-hover:text-primary">{{ project.name }} </h4>
                   </div>
                 </div>
                 <a :href="project.link" target="_blank" :aria-label="project.name" class="absolute inset-0 z-10"></a>
@@ -876,11 +703,12 @@ import LogoIcon from './components/icons/LogoIcon.vue'
       <div id="testimonials" class="p-10 bg-black container">
         <div class="px-2">
           <div class="mb-8 md:mb-6">
-            <div class="border-b border-paragraph dark:border-white dark:border-opacity-20 border-opacity-20 pb-5">
+            <div v-reveal.up class="border-b border-white/10 pb-5 flex items-baseline gap-4">
+              <span class="section-index text-sm">06</span>
               <h3 class="text-2xl uppercase tracking-widest font-light md:text-xl">Testimonials</h3>
             </div>
           </div>
-            <div>
+            <div v-reveal.up>
               <swiper-container
                   :slides-per-view="3"
                   :space-between="24"
@@ -903,20 +731,21 @@ import LogoIcon from './components/icons/LogoIcon.vue'
                   }"
                 >
                 <swiper-slide v-for="(testimonial, index) in testimonials" :key="index">
-                  <div class="relative border border-paragraph dark:border-white dark:border-opacity-20 border-opacity-20 rounded-xl p-7 estimonials-shadow overflow-hidden md:p-5 h-[495px] overflow-y-scroll">
-                    <div class="flex items-center gap-7 md:gap-5">
-                      <div class="w-24 h-24 bg-primary rounded-lg overflow-hidden relative">
+                  <div class="relative glass rounded-2xl p-8 md:p-5 h-full min-h-[440px] flex flex-col estimonials-shadow overflow-hidden">
+                    <span class="absolute top-3 right-6 text-[110px] leading-none text-primary/10 font-bold select-none pointer-events-none">"</span>
+                    <div class="relative flex items-center gap-6 md:gap-5">
+                      <div class="w-20 h-20 bg-primary rounded-xl overflow-hidden relative shrink-0">
                         <img :src="`/testimonials/${testimonial.author.image}`" loading="lazy" :alt="testimonial.author.name" class="w-full h-full object-cover object-center absolute">
                       </div>
                       <div class="flex-1">
-                        <h4 class="text-primary text-2xl md:text-xl mb-2.5 leading-none">{{ testimonial.author.name }}</h4>
-                        <span class="text-base text-paragraph dark:text-dark-75">{{ testimonial.author.title }}</span>
+                        <h4 class="text-white text-xl md:text-lg mb-2 leading-none">{{ testimonial.author.name }}</h4>
+                        <span class="text-sm text-paragraph">{{ testimonial.author.title }}</span>
                       </div>
                     </div>
-                    <div class="mt-7 mb-4 md:mt-5 md:mb-3">
-                      <p class="text-lg text-paragraph dark:text-dark-75 font-extralight md:text-base">{{ testimonial.quote }}</p>
+                    <div class="relative mt-7 mb-6 md:mt-5 md:mb-4 flex-1">
+                      <p class="text-base text-paragraph font-extralight leading-paragraph">{{ testimonial.quote }}</p>
                     </div>
-                    <div class="flex items-center justify-between">
+                    <div class="relative flex items-center justify-between">
                       <div class="flex items-center gap-2.5">
                         <div class="flex items-center gap-0.5">
                           <span class="text-primary w-4 h-4" v-for="(star, index) in testimonial.reviews" :key="index">
@@ -925,17 +754,17 @@ import LogoIcon from './components/icons/LogoIcon.vue'
                             </svg>
                           </span>
                         </div>
-                        <span class="text-xs text-paragraph dark:text-dark-75 leading-none pt-1">5 reviews</span>
+                        <span class="text-xs text-paragraph leading-none pt-1">5 reviews</span>
                       </div>
                     </div>
                   </div>
                 </swiper-slide>
               </swiper-container>
-              <div class="flex justify-center gap-4 mt-4">
-                <div class="swiper-button-prev cursor-pointer bg-white text-black rounded-full w-[30px] h-[30px] flex items-center justify-center">
+              <div class="flex justify-center gap-4 mt-6">
+                <div class="swiper-button-prev cursor-pointer bg-white text-black rounded-full w-[38px] h-[38px] flex items-center justify-center transition-transform duration-300 hover:scale-110">
                   <ArrowRightIcon class="w-4 h-4 transform rotate-180" />
                 </div>
-                <div class="swiper-button-next cursor-pointer bg-white text-black rounded-full w-[30px] h-[30px] flex items-center justify-center">
+                <div class="swiper-button-next cursor-pointer bg-white text-black rounded-full w-[38px] h-[38px] flex items-center justify-center transition-transform duration-300 hover:scale-110">
                   <ArrowRightIcon class="w-4 h-4" />
                 </div>
               </div>
@@ -946,24 +775,42 @@ import LogoIcon from './components/icons/LogoIcon.vue'
       <div id="contact" class="p-10 bg-black relative container">
         <div class="px-2">
           <div class="mb-8 md:mb-6">
-            <div class="border-b border-paragraph dark:border-white dark:border-opacity-20 border-opacity-20 pb-5">
+            <div v-reveal.up class="border-b border-white/10 pb-5 flex items-baseline gap-4">
+              <span class="section-index text-sm">07</span>
               <h3 class="text-2xl uppercase tracking-widest font-light md:text-xl">Get In Touch</h3>
             </div>
           </div>
           <div class="flex items-start justify-between gap-10 md:flex-col md:gap-8">
-            <div class="w-full">
-              <h2 class="text-5xl mt-4 mb-4 leading-tight md:text-4xl md:leading-tight">Let's collaborate to create outstanding web experiences.</h2>
-              <p class="text-paragraph dark:text-dark-75 font-extralight text-base leading-normal mb-10 md:mb-6">If you would like to work with us or just want to get in touch, we'd love <br> to hear from you! </p>
-              <a href="//api.whatsapp.com/send?phone=212608630996" target="_blank" class="text-primary text-3xl font-medium underline md:text-2xl">+212 608630996</a>
+            <div v-reveal.left class="w-full">
+              <h2 class="text-5xl mt-4 mb-4 leading-tight md:text-4xl md:leading-tight">Let's collaborate to create <span class="gradient-text">outstanding</span> web experiences.</h2>
+              <p class="text-paragraph font-extralight text-base leading-normal mb-10 md:mb-6">If you would like to work with us or just want to get in touch, we'd love to hear from you!</p>
+              <a href="//api.whatsapp.com/send?phone=212608630996" target="_blank" class="glass inline-flex items-center gap-4 rounded-2xl px-6 py-4 border-glow transition-all duration-500 hover:-translate-y-0.5">
+                <span class="w-11 h-11 rounded-full bg-primary/15 text-primary flex items-center justify-center shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" class="w-5 h-5">
+                    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
+                  </svg>
+                </span>
+                <span class="flex flex-col">
+                  <span class="text-xs uppercase tracking-widest text-paragraph">WhatsApp</span>
+                  <span class="text-xl text-primary font-medium leading-tight">+212 608630996</span>
+                </span>
+              </a>
             </div>
-            <div class="w-full">
-              <form @submit.prevent="sendMessage" class="grid gap-7 md:gap-5">
-                <div class="flex items-center gap-7 md:flex-col md:gap-5">
+            <div v-reveal.right class="w-full">
+              <form @submit.prevent="sendMessage" class="grid gap-5 md:gap-5">
+                <div
+                  v-if="emailResponse.status"
+                  class="rounded-xl border px-4 py-3 text-sm"
+                  :class="emailResponse.type === 'error' ? 'border-red-400/30 bg-red-400/10 text-red-300' : 'border-primary/30 bg-primary/10 text-primary'"
+                >
+                  {{ emailResponse.message }}
+                </div>
+                <div class="flex items-center gap-5 md:flex-col md:gap-5">
                   <div class="flex-1 md:w-full">
                     <input
                       v-model="form.name"
                       type="text"
-                      class="border border-paragraph dark:border-white dark:border-opacity-20 border-opacity-10 rounded-lg outline-none bg-transparent p-4 w-full placeholder:text-black dark:placeholder:text-white placeholder:text-opacity-30 placeholder:font-light duration-500 transition-all focus:border-opacity-100"
+                      class="input-modern"
                       placeholder="Name"
                       required
                     />
@@ -972,7 +819,7 @@ import LogoIcon from './components/icons/LogoIcon.vue'
                     <input
                       v-model="form.from_name"
                       type="email"
-                      class="border border-paragraph dark:border-white dark:border-opacity-20 border-opacity-10 rounded-lg outline-none bg-transparent p-4 w-full placeholder:text-black dark:placeholder:text-white placeholder:text-opacity-30 placeholder:font-light duration-500 transition-all focus:border-opacity-100"
+                      class="input-modern"
                       placeholder="Email"
                       required
                     />
@@ -982,14 +829,14 @@ import LogoIcon from './components/icons/LogoIcon.vue'
                   <input
                     v-model="form.subject"
                     type="text"
-                    class="border border-paragraph dark:border-white dark:border-opacity-20 border-opacity-10 rounded-lg outline-none bg-transparent p-4 w-full placeholder:text-black dark:placeholder:text-white placeholder:text-opacity-30 placeholder:font-light duration-500 transition-all focus:border-opacity-100"
+                    class="input-modern"
                     placeholder="Subject"
                   />
                 </div>
                 <div class="flex-1">
                   <textarea
                     v-model="form.message"
-                    class="border border-paragraph dark:border-white dark:border-opacity-20 border-opacity-10 rounded-lg outline-none bg-transparent p-4 w-full placeholder:text-black dark:placeholder:text-white placeholder:text-opacity-30 placeholder:font-light duration-500 transition-all focus:border-opacity-100"
+                    class="input-modern"
                     rows="8"
                     placeholder="Message"
                     required
@@ -998,7 +845,7 @@ import LogoIcon from './components/icons/LogoIcon.vue'
                 <div class="flex-1">
                   <button
                     type="submit"
-                    class="relative overflow-hidden border border-paragraph dark:border-white dark:border-opacity-20 border-opacity-10 uppercase text-black dark:text-white tracking-widest bg-transparent px-4 py-5 leading-none flex items-center justify-center rounded-lg w-full group transition-colors duration-500 dark:hover:text-white hover:text-white h-14 outline-none"
+                    class="relative overflow-hidden border border-white/20 uppercase text-white tracking-widest bg-transparent px-4 py-5 leading-none flex items-center justify-center rounded-xl w-full group transition-colors duration-500 hover:border-primary h-14 outline-none"
                     :class="{ 'sending cursor-not-allowed': sending }"
                   >
                     <span
@@ -1021,9 +868,9 @@ import LogoIcon from './components/icons/LogoIcon.vue'
     </div>
   </section>
 </main>
-  <footer class="border-t border-paragraph dark:border-white dark:border-opacity-10 border-opacity-10 py-7 md:py-5">
+  <footer class="border-t border-white/10 py-7 md:py-5">
     <div class="container">
-      <span class="leading-none flex items-center justify-center text-center gap-1 text-paragraph dark:text-dark-75">
+      <span class="leading-none flex items-center justify-center text-center gap-1 text-paragraph">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" class="w-3.5 h-3.5 md:w-3 md:h-3">
           <path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM199.4 312.6c-31.2-31.2-31.2-81.9 0-113.1s81.9-31.2 113.1 0c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9c-50-50-131-50-181 0s-50 131 0 181s131 50 181 0c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0c-31.2 31.2-81.9 31.2-113.1 0z"></path>
         </svg>
